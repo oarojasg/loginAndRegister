@@ -1,0 +1,43 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div .div-campo {
+    display: "inline-block";
+    margin-bottom: "10px";
+}
+
+label .label-campo {
+    display: "inline-block";
+    width: "140px";
+    text-align: "right";
+}
+
+.right {
+    text-align: right;
+    padding: 10px;
+}
+
+.espaciado {
+    margin: 0 1.5rem;
+}
+
+.child {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.custom-form-item .ant-form-item-label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  .custom-form-item .ant-form-item-control {
+    display: inline-block;
+    width: calc(100% - 110px);
+  }
+
