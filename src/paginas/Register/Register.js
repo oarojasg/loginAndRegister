@@ -9,6 +9,7 @@ import * as formik from 'formik';
 import * as yup from 'yup';
 import { ref } from 'yup';
 import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectronico';
+import { registerUser } from '../../api/registerUser';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -28,10 +29,12 @@ export default function Register() {
   });
 
   const handleSubmitApi = async (values, actions) => {
-    console.log('Success');
-    alert('Success!! \n'
-      + JSON.stringify(values)
-    );
+    const result = await registerUser({
+      email: values.correoElectronico,
+      password: values.contrasena
+    });
+    console.log(result);
+    alert(JSON.stringify(result));
   }
 
   return(
