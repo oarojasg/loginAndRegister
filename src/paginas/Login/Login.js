@@ -12,6 +12,7 @@ import Contrasena from '../../componentes/Contrasena/contrasena';
 import * as formik from 'formik';
 import * as yup from 'yup';
 import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectronico';
+import { loginUserIdentityToken } from '../../api/loginUserIdentityToken';
 
 export default function Login({ setToken }) {
   const navigate = useNavigate();
@@ -26,8 +27,8 @@ export default function Login({ setToken }) {
   });
 
   const handleSubmitApi = async (values, actions) => {
-    const token = await loginUser({
-      user: values.correoElectronico,
+    const token = await loginUserIdentityToken({
+      email: values.correoElectronico,
       password: values.contrasena
     });
     setToken(token);
