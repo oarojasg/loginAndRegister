@@ -17,13 +17,7 @@ export default function Ingreso({ setToken }) {
     if (loginIsShown) navigate('/login', { setToken, setLoginIsShown } );
     else navigate('/register', { setLoginIsShown }  )
   }, [])
-  return(
-    <>
-      {/* { loginIsShown ?
-      <Login setToken={setToken} setLoginIsShown={setLoginIsShown} /> :
-      <Register setLoginIsShown={setLoginIsShown} /> } */}
-    </>
-  );
+  return(<></>);
 }
 
 Ingreso.propTypes = {
