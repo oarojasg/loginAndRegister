@@ -8,7 +8,7 @@ export async function loginUser(credentials, URLparameters) {
         },
         body: JSON.stringify(credentials).toString()
     });
-    let UInt8ArrayHolder = []
+    let UInt8ArrayHolder = [];
     for await (const chunk of response.body){
         console.log(chunk);
         UInt8ArrayHolder.push(chunk);

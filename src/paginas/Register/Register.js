@@ -33,8 +33,23 @@ export default function Register() {
       email: values.correoElectronico,
       password: values.contrasena
     });
-    console.log(result);
-    alert(JSON.stringify(result));
+    handleSubmitApiResponseHandler(result);
+  }
+
+  const handleSubmitApiResponseHandler = (result) => {
+    if (result.status == 200) {
+      alert("Success! go to login");
+      return;
+    }
+    if (result.status == 400) {
+      const errorDetailsObject = result.errors;
+      const detailsObjectValues = Object.values(errorDetailsObject);
+      const errorMessage = detailsObjectValues.reduce(
+        (cumulated, current) => cumulated + '\n' + current );
+      alert(errorMessage);
+      return;
+    }
+    alert("Error reading response");
   }
 
   return(
