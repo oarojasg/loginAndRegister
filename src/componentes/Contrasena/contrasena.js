@@ -7,7 +7,8 @@ export default function Contrasena({
     contrasenaTouched, 
     contrasenaErrors,
     controlId,
-    formControlName
+    formControlName,
+    tabindex
  }) {
     const [shown, setShown] = useState(false);
     const type = shown ? "text" : "password";
@@ -24,6 +25,7 @@ export default function Contrasena({
                     onChange={handleChange}
                     isInvalid={contrasenaTouched &&
                         !!contrasenaErrors}
+                    tabIndex={tabindex}
                 />
                 <InputGroup.Text as='button'
                     onClick={(e) => {

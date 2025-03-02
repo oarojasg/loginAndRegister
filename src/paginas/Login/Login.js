@@ -62,7 +62,8 @@ export default function Login({ setToken }) {
                         formControlName="correoElectronico"
                         funcionCambio={handleChange}
                         tocado={touched.correoElectronico}
-                        error={errors.correoElectronico} />
+                        error={errors.correoElectronico}
+                        tabIndex={1} />
                     </Row>
                     <Row className='justify-content-end mb-2'>
                       <Col xs="5" className='text-end'>
@@ -74,20 +75,23 @@ export default function Login({ setToken }) {
                         contrasenaTouched={touched.contrasena}
                         contrasenaErrors={errors.contrasena}
                         controlId={"validationFormik02"}
-                        formControlName={"contrasena"} />
+                        formControlName={"contrasena"}
+                        tabindex={2} />
                     </Row>
                     <ButtonToolbar className="justify-content-end">
                       <Button 
                         variant="primary" 
                         className='me-2' 
-                        type="submit">Ingresar
+                        type="submit"
+                        tabIndex={3}>
+                          Ingresar
                       </Button>
                       <Button 
                         variant="secondary"
                         onClick={() => navigate('/register')}>
-                        Registrarse
+                          Registrarse
                       </Button>
-                    </ButtonToolbar>
+                    </ButtonToolbar>  
                   </Form>
               </Container>
             </div>

@@ -6,7 +6,8 @@ export default function CorreoElectronico ({
     formControlName,
     funcionCambio,
     tocado,
-    error
+    error,
+    tabIndex
 }) {
     return (
         <Form.Group as={Col} xs="7" controlId={controlId}>
@@ -17,6 +18,7 @@ export default function CorreoElectronico ({
                 className=" mr-sm-2"
                 onChange={funcionCambio}
                 isInvalid={tocado && !!error}
+                tabIndex={tabIndex}
             />
             <Form.Control.Feedback type="invalid">
                 {error}

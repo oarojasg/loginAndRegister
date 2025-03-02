@@ -80,7 +80,8 @@ export default function Register() {
                       formControlName="correoElectronico"
                       funcionCambio={handleChange}
                       tocado={touched.correoElectronico}
-                      error={errors.correoElectronico} />
+                      error={errors.correoElectronico}
+                      tabIndex={1} />
                   </Row>
                   <Row className='justify-content-end mb-2'>
                     <Col xs="5" className='text-end'>
@@ -92,7 +93,8 @@ export default function Register() {
                       contrasenaTouched={touched.contrasena}
                       contrasenaErrors={errors.contrasena}
                       controlId={"validationFormik02"}
-                      formControlName={"contrasena"} />
+                      formControlName={"contrasena"} 
+                      tabindex={2}/>
                   </Row>
                   <Row className='justify-content-end mb-2'>
                     <Col xs="5" className='text-end'>
@@ -104,7 +106,8 @@ export default function Register() {
                       contrasenaTouched={touched.confirmarContrasena}
                       contrasenaErrors={errors.confirmarContrasena}
                       controlId={"validationFormik03"}
-                      formControlName={"confirmarContrasena"} />
+                      formControlName={"confirmarContrasena"}
+                      tabindex={3} />
                   </Row>
                   <Row className='justify-content-end mb-2'>
                     <Col xs="5" className='text-end'>
@@ -121,7 +124,8 @@ export default function Register() {
                               checked={values.aceptaTerminos}
                               onChange={handleChange}
                               isInvalid={touched.aceptaTerminos &&
-                                !!errors.aceptaTerminos}/>
+                                !!errors.aceptaTerminos}
+                              tabIndex={4}/>
                             <Form.Control.Feedback type="invalid">
                               {errors.aceptaTerminos}
                             </Form.Control.Feedback>
@@ -133,6 +137,7 @@ export default function Register() {
                     <Button 
                       variant="primary" 
                       className='me-2' 
+                      tabIndex={5}
                       type="submit">Registrarse
                     </Button>
                     <Button 
