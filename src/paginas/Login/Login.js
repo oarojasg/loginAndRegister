@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../../api/loginUser';
 import './Login.css';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { Form, Row, Col, Container } from 'react-bootstrap';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Titulo from '../../componentes/Titulo/titulo';
 import Contrasena from '../../componentes/Contrasena/contrasena';
 import * as formik from 'formik';
@@ -15,6 +13,17 @@ import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectro
 import { loginUserIdentityToken } from '../../api/loginUserIdentityToken';
 
 export default function Login({ setToken }) {
+  const keyDownHandler = (event, values) => 
+    { 
+      if (event.key === "Enter" && event.target.nodeName === "INPUT") {
+        var form = event.target.form;
+        var index = Array.prototype.indexOf.call(form, event.target);
+        console.log(index);
+        // form.elements[index + 2].focus();
+        // event.preventDefault();
+      }
+    };
+
   const navigate = useNavigate();
   const { Formik } = formik;
 
@@ -51,7 +60,8 @@ export default function Login({ setToken }) {
                 principal={"Bienvenido al aplicativo de convocatorias"}
                 secundario={"Por favor ingrese con su usuario y contraseña"} />
               <Container className='bg-light border rounded p-2 w-90'>
-                  <Form noValidate inline onSubmit={handleSubmit}>
+                  <Form noValidate inline onSubmit={handleSubmit}
+                    onKeyDown={keyDownHandler}>
                     <Row className='justify-content-end mb-2'>
                       <Col xs="5" className='text-end'>
                         Correo electrónico
