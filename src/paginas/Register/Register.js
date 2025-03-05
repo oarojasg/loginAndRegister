@@ -69,7 +69,16 @@ export default function Register() {
                 principal={"Bienvenido al aplicativo de convocatorias"}
                 secundario={"Registro usuarios nuevos"} />
               <Container className='bg-light border rounded p-2 w-90'>
-                <Form noValidate inline onSubmit={handleSubmit}>
+                <Form 
+                  noValidate 
+                  inline 
+                  onSubmit={handleSubmit}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault(); 
+                      handleSubmit();
+                    }
+                  }}>
                   <Row className='justify-content-end mb-2'>
                     <Col xs="5" className='text-end'>
                       Correo electrónico

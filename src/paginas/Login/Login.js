@@ -13,17 +13,6 @@ import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectro
 import { loginUserIdentityToken } from '../../api/loginUserIdentityToken';
 
 export default function Login({ setToken }) {
-  const keyDownHandler = (event, values) => 
-    { 
-      if (event.key === "Enter" && event.target.nodeName === "INPUT") {
-        var form = event.target.form;
-        var index = Array.prototype.indexOf.call(form, event.target);
-        console.log(index);
-        // form.elements[index + 2].focus();
-        // event.preventDefault();
-      }
-    };
-
   const navigate = useNavigate();
   const { Formik } = formik;
 
@@ -45,71 +34,77 @@ export default function Login({ setToken }) {
     navigate('/default');
   }
 
-  return(
+  return (
     <Formik
-      validationSchema={schema}
-      onSubmit={handleSubmitApi}
-      initialValues={{
-        correoElectronico: '',
-        contrasena: ''
-      }}>
-        {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <section className='register-page-wrapper page'>
-            <div className="register-page">
-              <Titulo 
-                principal={"Bienvenido al aplicativo de convocatorias"}
-                secundario={"Por favor ingrese con su usuario y contraseña"} />
-              <Container className='bg-light border rounded p-2 w-90'>
-                  <Form noValidate inline onSubmit={handleSubmit}
-                    onKeyDown={keyDownHandler}>
-                    <Row className='justify-content-end mb-2'>
-                      <Col xs="5" className='text-end'>
-                        Correo electrónico
-                      </Col>
-                      <CorreoElectronico
-                        controlId="validationFormik01"
-                        valor={values.correoElectronico}
-                        formControlName="correoElectronico"
-                        funcionCambio={handleChange}
-                        tocado={touched.correoElectronico}
-                        error={errors.correoElectronico}
-                        tabIndex={1} />
-                    </Row>
-                    <Row className='justify-content-end mb-2'>
-                      <Col xs="5" className='text-end'>
-                        Contraseña
-                      </Col>
-                      <Contrasena 
-                        handleChange={handleChange}
-                        contrasenaValue={values.contrasena}
-                        contrasenaTouched={touched.contrasena}
-                        contrasenaErrors={errors.contrasena}
-                        controlId={"validationFormik02"}
-                        formControlName={"contrasena"}
-                        tabindex={2} />
-                    </Row>
-                    <ButtonToolbar className="justify-content-end">
-                      <Button 
-                        variant="primary" 
-                        className='me-2' 
-                        type="submit"
-                        tabIndex={3}>
-                          Ingresar
-                      </Button>
-                      <Button 
-                        variant="secondary"
-                        onClick={() => navigate('/register')}>
-                          Registrarse
-                      </Button>
-                    </ButtonToolbar>  
-                  </Form>
-              </Container>
-            </div>
-          </section>
-        )}
+    validationSchema={schema}
+    onSubmit={handleSubmitApi}
+    initialValues={{
+      correoElectronico: '',
+      contrasena: ''
+    }}>
+      {({ handleSubmit, handleChange, values, touched, errors }) => (
+        <section className='register-page-wrapper page'>
+          <div className="register-page">
+            <Titulo 
+              principal={"Bienvenido al aplicativo de convocatorias"}
+              secundario={"Por favor ingrese con su usuario y contraseña"} />
+            <Container className='bg-light border rounded p-2 w-90'>
+                <Form 
+                  noValidate 
+                  inline 
+                  onSubmit={handleSubmit}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault(); 
+                      handleSubmit();
+                    }
+                  }}>
+                  <Row className='justify-content-end mb-2'>
+                    <Col xs="5" className='text-end'>
+                      Correo electrónico
+                    </Col>
+                    <CorreoElectronico
+                      controlId="validationFormik01"
+                      valor={values.correoElectronico}
+                      formControlName="correoElectronico"
+                      funcionCambio={handleChange}
+                      tocado={touched.correoElectronico}
+                      error={errors.correoElectronico}
+                      tabIndex={1} />
+                  </Row>
+                  <Row className='justify-content-end mb-2'>
+                    <Col xs="5" className='text-end'>
+                      Contraseña
+                    </Col>
+                    <Contrasena 
+                      handleChange={handleChange}
+                      contrasenaValue={values.contrasena}
+                      contrasenaTouched={touched.contrasena}
+                      contrasenaErrors={errors.contrasena}
+                      controlId={"validationFormik02"}
+                      formControlName={"contrasena"}
+                      tabindex={2} />
+                  </Row>
+                  <ButtonToolbar className="justify-content-end">
+                    <Button 
+                      variant="primary" 
+                      className='me-2' 
+                      type="submit"
+                      tabIndex={3}>
+                        Ingresar
+                    </Button>
+                    <Button 
+                      variant="secondary"
+                      onClick={() => navigate('/register')}>
+                        Registrarse
+                    </Button>
+                  </ButtonToolbar>  
+                </Form>
+            </Container>
+          </div>
+        </section>
+      )}
     </Formik>
-    
-       
   );
 }
 
