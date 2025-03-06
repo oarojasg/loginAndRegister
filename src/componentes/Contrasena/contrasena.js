@@ -31,7 +31,7 @@ export default function Contrasena({
                     onClick={(e) => {
                     e.preventDefault();
                     setShown(!shown);}}>
-                    <i class={Icon}></i>
+                    <i className={Icon}></i>
                 </InputGroup.Text>
                 <Form.Control.Feedback type="invalid">
                     {contrasenaErrors}

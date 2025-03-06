@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { Form, Row, Col, Container } from 'react-bootstrap';
-import Titulo from '../../componentes/Titulo/titulo';
-import Contrasena from '../../componentes/Contrasena/contrasena';
+import Titulo from '../componentes/Titulo/titulo';
+import Contrasena from '../componentes/Contrasena/contrasena';
 import * as formik from 'formik';
 import * as yup from 'yup';
-import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectronico';
-import { loginUserIdentityToken } from '../../api/loginUserIdentityToken';
+import CorreoElectronico from '../componentes/CorreoElectronico/correoElectronico';
+import { loginUserIdentityToken } from '../api/loginUserIdentityToken';
 
 export default function Login({ setToken }) {
   const navigate = useNavigate();
@@ -51,7 +50,7 @@ export default function Login({ setToken }) {
             <Container className='bg-light border rounded p-2 w-90'>
                 <Form 
                   noValidate 
-                  inline 
+                  inline="true" 
                   onSubmit={handleSubmit}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {

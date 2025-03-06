@@ -4,20 +4,18 @@ import React from 'react';
 import './App.css';
 import useToken from '../funcionalidades/App/useToken';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Ingreso from '../paginas/Ingreso/Ingreso';
-import Dashboard from '../paginas/Dashboard/Dashboard';
-import Preferences from '../paginas/Preferences/Preferences';
-import Register from '../paginas/Register/Register';
-import Login from '../paginas/Login/Login';
+import Dashboard from '../paginas/Dashboard';
+import Preferences from '../paginas/Preferences';
+import Register from '../paginas/Register';
+import Login from '../paginas/Login';
 
 function App() {
   const { token, setToken } = useToken();
-
   if(!token) {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Ingreso />} />
+          <Route path='/' element={<Login setToken={setToken} />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register />} />
           <Route path='/default' element={<App />} />

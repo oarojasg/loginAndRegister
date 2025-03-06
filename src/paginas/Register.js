@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Form, Row, Col } from 'react-bootstrap';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
-import Titulo from '../../componentes/Titulo/titulo';
-import Contrasena from '../../componentes/Contrasena/contrasena';
+import Titulo from '../componentes/Titulo/titulo';
+import Contrasena from '../componentes/Contrasena/contrasena';
 import * as formik from 'formik';
 import * as yup from 'yup';
 import { ref } from 'yup';
-import CorreoElectronico from '../../componentes/CorreoElectronico/correoElectronico';
-import { registerUser } from '../../api/registerUser';
+import CorreoElectronico from '../componentes/CorreoElectronico/correoElectronico';
+import { registerUser } from '../api/registerUser';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ export default function Register() {
               <Container className='bg-light border rounded p-2 w-90'>
                 <Form 
                   noValidate 
-                  inline 
+                  inline="true"
                   onSubmit={handleSubmit}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
