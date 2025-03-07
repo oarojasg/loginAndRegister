@@ -10,6 +10,7 @@ import * as yup from 'yup';
 import { ref } from 'yup';
 import CorreoElectronico from '../componentes/CorreoElectronico/correoElectronico';
 import { registerUser } from '../api/registerUser';
+import terminosYCondiciones from '../activos/terminosYCondiciones.pdf'
 
 export default function Register() {
   const navigate = useNavigate();
@@ -120,7 +121,11 @@ export default function Register() {
                   </Row>
                   <Row className='justify-content-end mb-2'>
                     <Col xs="5" className='text-end'>
-                      Acepto términos de privacidad
+                      Acepto &nbsp;
+                      <a href={ terminosYCondiciones }
+                        download="terminosPrivacidad.pdf">
+                          términos de privacidad
+                        </a>
                     </Col>
                     <Form.Group as={Col} xs="7" className='text-start'
                       controlId="validationFormik04">
