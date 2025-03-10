@@ -39,7 +39,7 @@ export default function Register() {
 
   const handleSubmitApiResponseHandler = (result) => {
     if (result.status == 200) {
-      alert("Success! go to login");
+      navigate("/registerSuccess");
       return;
     }
     if (result.status == 400) {

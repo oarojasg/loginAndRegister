@@ -8,6 +8,7 @@ import Dashboard from '../paginas/Dashboard';
 import Preferences from '../paginas/Preferences';
 import Register from '../paginas/Register';
 import Login from '../paginas/Login';
+import RegisterSuccess from '../paginas/RegisterSuccess';
 
 function App() {
   const { token, setToken } = useToken();
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register />} />
           <Route path='/default' element={<App />} />
+          <Route path='/registerSuccess' element={<RegisterSuccess />} />
         </Routes>
       </BrowserRouter>
     );
