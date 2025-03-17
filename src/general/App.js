@@ -8,6 +8,7 @@ import Dashboard from '../paginas/Dashboard';
 import Preferences from '../paginas/Preferences';
 import Register from '../paginas/Register';
 import Login from '../paginas/Login';
+import Confirm from '../paginas/Confirm';
 import RegisterSuccess from '../paginas/RegisterSuccess';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path='/default' element={<App />} />
           <Route path='/registerSuccess' element={<RegisterSuccess />} />
+          <Route path='/confirm' element={<Confirm />} />
         </Routes>
       </BrowserRouter>
     );

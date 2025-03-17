@@ -45,7 +45,7 @@ export default function Login({ setToken }) {
         <section className='register-page-wrapper page'>
           <div className="register-page">
             <Titulo 
-              principal={"Bienvenido al aplicativo de convocatorias"}
+              principal={"Hola"}
               secundario={"Por favor ingrese con su usuario y contraseña"} />
             <Container className='bg-light border rounded p-2 w-90'>
                 <Form 

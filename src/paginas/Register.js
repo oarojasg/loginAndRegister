@@ -67,7 +67,7 @@ export default function Register() {
           <section className='register-page-wrapper page'>
             <div className='register-page'>
               <Titulo 
-                principal={"Bienvenido al aplicativo de convocatorias"}
+                principal={"Hola"}
                 secundario={"Registro usuarios nuevos"} />
               <Container className='bg-light border rounded p-2 w-90'>
                 <Form 
