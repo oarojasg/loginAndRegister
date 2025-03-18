@@ -6,6 +6,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { Form, Row, Col, Container } from 'react-bootstrap';
 import Titulo from '../componentes/Titulo/titulo';
 import Contrasena from '../componentes/Contrasena/contrasena';
+import ContenedorPrincipal from '../componentes/ContenedorPrincipal/ContenedorPrincipal';
 import * as formik from 'formik';
 import * as yup from 'yup';
 import CorreoElectronico from '../componentes/CorreoElectronico/correoElectronico';
@@ -42,8 +43,7 @@ export default function Login({ setToken }) {
       contrasena: ''
     }}>
       {({ handleSubmit, handleChange, values, touched, errors }) => (
-        <section className='register-page-wrapper page'>
-          <div className="register-page">
+        <ContenedorPrincipal>
             <Titulo 
               principal={"Hola"}
               secundario={"Por favor ingrese con su usuario y contraseña"} />
@@ -100,8 +100,7 @@ export default function Login({ setToken }) {
                   </ButtonToolbar>  
                 </Form>
             </Container>
-          </div>
-        </section>
+        </ContenedorPrincipal>
       )}
     </Formik>
   );

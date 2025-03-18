@@ -5,6 +5,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
 import Titulo from '../componentes/Titulo/titulo';
 import Contrasena from '../componentes/Contrasena/contrasena';
+import ContenedorPrincipal from '../componentes/ContenedorPrincipal/ContenedorPrincipal';
 import * as formik from 'formik';
 import * as yup from 'yup';
 import { ref } from 'yup';
@@ -64,106 +65,104 @@ export default function Register() {
         aceptaTerminos: false
       }}>
         {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <section className='register-page-wrapper page'>
-            <div className='register-page'>
-              <Titulo 
-                principal={"Hola"}
-                secundario={"Registro usuarios nuevos"} />
-              <Container className='bg-light border rounded p-2 w-90'>
-                <Form 
-                  noValidate 
-                  inline="true"
-                  onSubmit={handleSubmit}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault(); 
-                      handleSubmit();
-                    }
-                  }}>
-                  <Row className='justify-content-end mb-2'>
-                    <Col xs="5" className='text-end'>
-                      Correo electrónico
-                    </Col>
-                    <CorreoElectronico
-                      controlId="validationFormik01"
-                      valor={values.correoElectronico}
-                      formControlName="correoElectronico"
-                      funcionCambio={handleChange}
-                      tocado={touched.correoElectronico}
-                      error={errors.correoElectronico}
-                      tabIndex={1} />
-                  </Row>
-                  <Row className='justify-content-end mb-2'>
-                    <Col xs="5" className='text-end'>
-                      Contraseña
-                    </Col>
-                    <Contrasena 
-                      handleChange={handleChange}
-                      contrasenaValue={values.contrasena}
-                      contrasenaTouched={touched.contrasena}
-                      contrasenaErrors={errors.contrasena}
-                      controlId={"validationFormik02"}
-                      formControlName={"contrasena"} 
-                      tabindex={2}/>
-                  </Row>
-                  <Row className='justify-content-end mb-2'>
-                    <Col xs="5" className='text-end'>
-                      Confirmar contraseña
-                    </Col>
-                    <Contrasena 
-                      handleChange={handleChange}
-                      contrasenaValue={values.confirmarContrasena}
-                      contrasenaTouched={touched.confirmarContrasena}
-                      contrasenaErrors={errors.confirmarContrasena}
-                      controlId={"validationFormik03"}
-                      formControlName={"confirmarContrasena"}
-                      tabindex={3} />
-                  </Row>
-                  <Row className='justify-content-end mb-2'>
-                    <Col xs="5" className='text-end'>
-                      Acepto &nbsp;
-                      <a href={ terminosYCondiciones }
-                        download="terminosPrivacidad.pdf">
-                          términos de privacidad
-                        </a>
-                    </Col>
-                    <Form.Group as={Col} xs="7" className='text-start'
-                      controlId="validationFormik04">
-                        <InputGroup>
-                          <Form.Check
-                              type='checkbok'>
-                            <Form.Check.Input 
-                              type='checkbox' 
-                              name="aceptaTerminos"
-                              checked={values.aceptaTerminos}
-                              onChange={handleChange}
-                              isInvalid={touched.aceptaTerminos &&
-                                !!errors.aceptaTerminos}
-                              tabIndex={4}/>
-                            <Form.Control.Feedback type="invalid">
-                              {errors.aceptaTerminos}
-                            </Form.Control.Feedback>
-                          </Form.Check>
-                      </InputGroup>
-                    </Form.Group>
-                  </Row>
-                  <ButtonToolbar className="justify-content-end">
-                    <Button 
-                      variant="primary" 
-                      className='me-2' 
-                      tabIndex={5}
-                      type="submit">Registrarse
-                    </Button>
-                    <Button 
-                      variant="secondary"
-                      onClick={() => navigate('/login')}>
-                      Volver
-                    </Button>
-                  </ButtonToolbar>
-                </Form>
-              </Container>
-            </div>
-          </section>
+          <ContenedorPrincipal>
+            <Titulo 
+              principal={"Hola"}
+              secundario={"Registro usuarios nuevos"} />
+            <Container className='bg-light border rounded p-2 w-90'>
+              <Form 
+                noValidate 
+                inline="true"
+                onSubmit={handleSubmit}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault(); 
+                    handleSubmit();
+                  }
+                }}>
+                <Row className='justify-content-end mb-2'>
+                  <Col xs="5" className='text-end'>
+                    Correo electrónico
+                  </Col>
+                  <CorreoElectronico
+                    controlId="validationFormik01"
+                    valor={values.correoElectronico}
+                    formControlName="correoElectronico"
+                    funcionCambio={handleChange}
+                    tocado={touched.correoElectronico}
+                    error={errors.correoElectronico}
+                    tabIndex={1} />
+                </Row>
+                <Row className='justify-content-end mb-2'>
+                  <Col xs="5" className='text-end'>
+                    Contraseña
+                  </Col>
+                  <Contrasena 
+                    handleChange={handleChange}
+                    contrasenaValue={values.contrasena}
+                    contrasenaTouched={touched.contrasena}
+                    contrasenaErrors={errors.contrasena}
+                    controlId={"validationFormik02"}
+                    formControlName={"contrasena"} 
+                    tabindex={2}/>
+                </Row>
+                <Row className='justify-content-end mb-2'>
+                  <Col xs="5" className='text-end'>
+                    Confirmar contraseña
+                  </Col>
+                  <Contrasena 
+                    handleChange={handleChange}
+                    contrasenaValue={values.confirmarContrasena}
+                    contrasenaTouched={touched.confirmarContrasena}
+                    contrasenaErrors={errors.confirmarContrasena}
+                    controlId={"validationFormik03"}
+                    formControlName={"confirmarContrasena"}
+                    tabindex={3} />
+                </Row>
+                <Row className='justify-content-end mb-2'>
+                  <Col xs="5" className='text-end'>
+                    Acepto &nbsp;
+                    <a href={ terminosYCondiciones }
+                      download="terminosPrivacidad.pdf">
+                        términos de privacidad
+                      </a>
+                  </Col>
+                  <Form.Group as={Col} xs="7" className='text-start'
+                    controlId="validationFormik04">
+                      <InputGroup>
+                        <Form.Check
+                            type='checkbok'>
+                          <Form.Check.Input 
+                            type='checkbox' 
+                            name="aceptaTerminos"
+                            checked={values.aceptaTerminos}
+                            onChange={handleChange}
+                            isInvalid={touched.aceptaTerminos &&
+                              !!errors.aceptaTerminos}
+                            tabIndex={4}/>
+                          <Form.Control.Feedback type="invalid">
+                            {errors.aceptaTerminos}
+                          </Form.Control.Feedback>
+                        </Form.Check>
+                    </InputGroup>
+                  </Form.Group>
+                </Row>
+                <ButtonToolbar className="justify-content-end">
+                  <Button 
+                    variant="primary" 
+                    className='me-2' 
+                    tabIndex={5}
+                    type="submit">Registrarse
+                  </Button>
+                  <Button 
+                    variant="secondary"
+                    onClick={() => navigate('/login')}>
+                    Volver
+                  </Button>
+                </ButtonToolbar>
+              </Form>
+            </Container>
+          </ContenedorPrincipal>
         )} 
     </Formik> 
   );
