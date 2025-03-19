@@ -7,11 +7,9 @@ export default function RegisterSuccess() {
 
   return(
     <ContenedorPrincipal>
-      <>
         <Titulo 
           principal={"Se ha registrado exitosamente"}
           secundario={"Por favor revise su correo electrónico."} />
-      </>
     </ContenedorPrincipal>
   );
 }
