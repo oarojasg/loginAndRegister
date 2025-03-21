@@ -1,6 +1,8 @@
+import config from '../config.json'
 export async function loginUser(credentials, URLparameters) {
+    const apiAddress = config.api.url + "login"
     const response = await fetch(
-        'https://localhost:7021/login' + URLparameters, {
+        apiAddress + URLparameters, {
         method: 'POST',
         headers: {
         'accept': 'text/plain',

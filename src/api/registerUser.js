@@ -1,5 +1,8 @@
+import config from '../config.json'
+
 export async function registerUser(credentials) {
-    var response = await fetch('https://localhost:7021/register', {
+    const apiAddress = config.api.url + "register"
+    var response = await fetch(apiAddress, {
         method: 'POST',
         headers: {
         'accept': '*/*',
