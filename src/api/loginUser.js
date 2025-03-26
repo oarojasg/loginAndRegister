@@ -1,4 +1,4 @@
-import config from '../config.json'
+import config from '../configs/config.json'
 export async function loginUser(credentials, URLparameters) {
     const apiAddress = config.api.url + "login"
     const response = await fetch(

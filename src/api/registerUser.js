@@ -1,4 +1,4 @@
-import config from '../config.json'
+import config from '../configs/config.json'
 
 export async function registerUser(credentials) {
     const apiAddress = config.api.url + "register"
