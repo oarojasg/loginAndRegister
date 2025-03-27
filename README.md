@@ -1,3 +1,23 @@
+# Motivation
+
+The register and login pages are part of any web application requiring user authentication. Yet there are not available templates on the Internet using specific frameworks like React.js.
+
+This is an attempt to provide an easy-to-use template for MVPs with no encrypting, using an SPA developed in React.js for an ASP.NET Identity WebApi.
+
+# The problem to solve
+
+Basically, this project aims to speed up the time-to-delivery in MVPs, prototypes and proof of concepts. While you concentrate on the core business idea there is a template that you can use to integrate to your project, thus skippping the authentication frontend task.
+
+# What did I learn?
+
+The flexibility of the framework encouraged me to sort the different functionalities of the web pages in reusable components that follow the Single Responsibility Principle.
+
+In addition, React.js is currently one of the most commonly used frontend frameworks. Although I have not had work experience with React, this project allowed me to develop my frontend skills.
+
+# What would make this project stand out
+
+There is a wide variety of implementations using other frameworks. However, an SPA targeted for the ASP.NET Identity WebApi can complement the interoperability between these two libraries for those using them in their projects.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
