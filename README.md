@@ -1,3 +1,13 @@
+# Login And Register
+
+This is a simple SPA for the ASP.NET identity WebApi. It is intended to provide a fast solution with no encryption for developing MVPs.
+
+The SPA uses the endpoints /login and /register, managing the session through the custom .NET token.
+
+The SPA was developed in React.js. The flexibility of the framework encouraged me to sort the different functionalities of the web pages in reusable components that follow the Single Responsibility Principle.
+
+In addition, React.js is currently one of the most commonly used frontend frameworks. Although I have not had work experience with React, this project allowed me to develop my frontend skills.
+
 # Motivation
 
 The register and login pages are part of any web application requiring user authentication. Yet there are not available templates on the Internet using specific frameworks like React.js.
@@ -7,12 +17,6 @@ This is an attempt to provide an easy-to-use template for MVPs with no encryptin
 # The problem to solve
 
 Basically, this project aims to speed up the time-to-delivery in MVPs, prototypes and proof of concepts. While you concentrate on the core business idea there is a template that you can use to integrate to your project, thus skippping the authentication frontend task.
-
-# What did I learn?
-
-The flexibility of the framework encouraged me to sort the different functionalities of the web pages in reusable components that follow the Single Responsibility Principle.
-
-In addition, React.js is currently one of the most commonly used frontend frameworks. Although I have not had work experience with React, this project allowed me to develop my frontend skills.
 
 # What would make this project stand out
 
